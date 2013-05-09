@@ -4,7 +4,7 @@ class Spree::Slide < ActiveRecord::Base
   include Spree::Core::S3Support
   supports_s3 :image
   
-  Spree::Slide.attachment_definitions[:attachment][:url] = Spree::Config[:attachment_url]
+  Spree::Slide.attachment_definitions[:image][:url] = Spree::Config[:attachment_url]
   
   scope :published, where(:published => true)
   attr_accessible :name, :body, :link_url, :published, :image, :position, :product_id
